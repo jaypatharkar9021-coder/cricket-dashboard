@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cricket Analysis Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+/* Reset */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#f4f6f9;
+}
+
+/* Header */
+
+header{
+background:#1e3c72;
+color:white;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-size:16px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ffd700;
+}
+
+/* Hero */
+
+.hero{
+text-align:center;
+padding:80px 20px;
+background:linear-gradient(135deg,#1e3c72,#2a5298);
+color:white;
+}
+
+.hero h1{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+/* Dashboard Cards */
+
+.dashboard{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:40px;
+max-width:1100px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* Stats Section */
+
+.stats{
+padding:50px 20px;
+text-align:center;
+}
+
+.stats h2{
+margin-bottom:30px;
+}
+
+.charts{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:40px;
+max-width:1000px;
+margin:auto;
+}
+
+/* Footer */
+
+footer{
+background:#1e3c72;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+.charts canvas{
+width:100% !important;
+max-width:450px;
+height:300px !important;
+margin:auto;
+}
+.charts{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+max-width:900px;
+margin:auto;
+}
+
+.charts canvas{
+width:100% !important;
+max-width:450px;
+height:300px !important;
+margin:auto;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">🏏 Cricket Dashboard</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="players.html">Players</a>
+<a href="teams.html">Teams</a>
+<a href="matches.html">Matches</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Cricket Analysis Dashboard</h1>
+
+<p>Analyze player performance, team statistics and match results.</p>
+
+</section>
+
+
+<section class="dashboard">
+
+<div class="card">
+<h3>Top Players</h3>
+<p>View statistics of international cricket players.</p>
+</div>
+
+<div class="card">
+<h3>Teams</h3>
+<p>Explore top international cricket teams.</p>
+</div>
+
+<div class="card">
+<h3>Matches</h3>
+<p>See recent match results and analysis.</p>
+</div>
+
+<div class="card">
+<h3>Statistics</h3>
+<p>Graphical cricket data visualization.</p>
+</div>
+
+</section>
+
+
+<section class="stats">
+
+<h2>Cricket Statistics Analysis</h2>
+
+<div class="charts">
+
+<canvas id="runsChart"></canvas>
+
+<canvas id="teamChart"></canvas>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2025 Cricket Analysis Dashboard</p>
+
+</footer>
+
+
+<script>
+
+// Player Runs Chart
+
+const runsChart = document.getElementById('runsChart');
+
+new Chart(runsChart,{
+type:'bar',
+data:{
+labels:['Virat Kohli','Rohit Sharma','Joe Root','Babar Azam'],
+datasets:[{
+label:'Total Runs',
+data:[12898,10866,10529,9572],
+backgroundColor:['red','blue','green','orange']
+}]
+},
+options:{
+responsive:true
+}
+});
+
+
+// Team Wins Chart
+
+const teamChart = document.getElementById('teamChart');
+
+new Chart(teamChart,{
+type:'pie',
+data:{
+labels:['India','Australia','England','Pakistan'],
+datasets:[{
+label:'World Cup Wins',
+data:[2,6,1,1],
+backgroundColor:['blue','yellow','red','green']
+}]
+}
+});
+
+</script>
+
+</body>
+</html>
