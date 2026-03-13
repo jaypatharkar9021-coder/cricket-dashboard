@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Players - Cricket Dashboard</title>
+
+<style>
+body{font-family:Arial;margin:0;background:#f4f6f9;}
+
+header{background:#1e3c72;color:white;padding:15px;text-align:center;}
+
+.players{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 3px 8px rgba(0,0,0,0.2);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:8px;
+}
+
+footer{
+background:#1e3c72;
+color:white;
+text-align:center;
+padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Top Cricket Players</h1>
+</header>
+
+<section class="players">
+
+<div class="card">
+<img src="images/kohli.jpg">
+<h3>Virat Kohli</h3>
+<p>Runs: 12000+</p>
+</div>
+
+<div class="card">
+<img src="images/rohit.jpg">
+<h3>Rohit Sharma</h3>
+<p>Runs: 11000+</p>
+</div>
+
+<div class="card">
+<img src="images/babar.jpg">
+<h3>Babar Azam</h3>
+<p>Runs: 9800+</p>
+</div>
+
+<div class="card">
+<img src="images/root.jpg">
+<h3>Joe Root</h3>
+<p>Runs: 10500+</p>
+</div>
+
+</section>
+
+<footer>
+© 2025 Cricket Dashboard
+</footer>
+
+</body>
+</html>
